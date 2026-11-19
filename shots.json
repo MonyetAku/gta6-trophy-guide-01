@@ -1,0 +1,38 @@
+[
+ {
+  "file": "01-checklist.jpg",
+  "note": "Cover: header, progress to the platinum, filters, and the top of the trophy checklist",
+  "path": "/",
+  "viewport": {
+   "height": 720,
+   "width": 1280
+  }
+ },
+ {
+  "file": "02-guide.jpg",
+  "note": "A trophy's guide open beside it, with its cited sources (Positive Mental Attitude, the missable one)",
+  "path": "/",
+  "viewport": {
+   "height": 720,
+   "width": 1280
+  }
+ },
+ {
+  "file": "03-roadmap.jpg",
+  "note": "The five-stage roadmap to the platinum",
+  "path": "/#roadmap",
+  "viewport": {
+   "height": 720,
+   "width": 1280
+  }
+ },
+ {
+  "file": "04-spoiler.jpg",
+  "note": "Spoiler setting on: hidden story trophies masked until earned, with the Story filter active",
+  "path": "/",
+  "viewport": {
+   "height": 720,
+   "width": 1280
+  }
+ }
+]
