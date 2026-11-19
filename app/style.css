@@ -1,0 +1,130 @@
+/* Leonida Legend — GTA VI trophy guide & tracker. System fonts only, no network. */
+:root {
+  --bg: #150a1e;
+  --panel: #221130;
+  --panel2: #2c1740;
+  --ink: #f4ecfa;
+  --muted: #c9b3d9;
+  --line: #4a2b63;
+  --pink: #ff5ea8;
+  --orange: #ff9a3d;
+  --teal: #39d5c0;
+  --gold: #ffd166;
+  --silver: #cfd6e4;
+  --bronze: #e0a370;
+  --platinum: #b8f1ff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+}
+.hero {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 28px 28px 20px;
+  background: linear-gradient(135deg, #3b1157 0%, #7a1e6e 55%, #c22e6b 100%);
+  border-bottom: 3px solid var(--pink);
+}
+.kicker { margin: 0 0 4px; color: var(--gold); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; }
+h1 { margin: 0; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em; }
+.sub { max-width: 640px; color: #f6dff0; margin: 10px 0 0; font-size: 15px; }
+.progress-card {
+  background: rgba(10, 4, 18, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 14px 16px;
+  min-width: 250px;
+}
+.progress-card .big { font-size: 30px; font-weight: 800; }
+.bar { height: 10px; border-radius: 6px; background: rgba(255, 255, 255, 0.2); overflow: hidden; margin: 8px 0 6px; }
+.bar .fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--pink)); transition: width 0.25s ease; }
+.pct { margin: 0; font-size: 13px; color: #f6dff0; }
+.grades { list-style: none; display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0 0; padding: 0; font-size: 12px; color: var(--muted); }
+.grades b { color: var(--ink); }
+.controls {
+  display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
+  padding: 14px 28px; background: var(--panel); border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 5;
+}
+.controls label { font-size: 13px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+.controls input[type="search"], .controls select {
+  background: var(--bg); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 6px; padding: 6px 8px; font-size: 13px;
+}
+.controls input[type="search"] { width: 220px; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  background: var(--bg); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 999px; padding: 5px 12px; font-size: 13px; cursor: pointer;
+}
+.chip.on { background: var(--pink); border-color: var(--pink); color: #1a0612; font-weight: 700; }
+button, .import {
+  background: var(--panel2); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 6px; padding: 6px 10px; font-size: 13px; cursor: pointer;
+}
+button:hover, .import:hover { border-color: var(--pink); }
+.spoiler input { accent-color: var(--pink); }
+.roadmap { padding: 20px 28px 4px; scroll-margin-top: 120px; }
+.roadmap h2 { margin: 0 0 6px; font-size: 24px; }
+.roadmap-note { color: var(--muted); max-width: 900px; margin: 0 0 14px; font-size: 14px; }
+.stages { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.stages li {
+  background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--orange);
+  border-radius: 10px; padding: 12px 14px;
+}
+.stages li:nth-child(2) { border-left-color: var(--teal); }
+.stages li:nth-child(3) { border-left-color: var(--pink); }
+.stages li:nth-child(4) { border-left-color: var(--gold); }
+.stages li:nth-child(5) { border-left-color: #8f7bff; }
+.stages h3 { margin: 0 0 6px; font-size: 15px; }
+.stages p { margin: 0; font-size: 13.5px; color: var(--muted); }
+.stages p strong { color: var(--ink); }
+.showing { padding: 16px 28px 0; color: var(--muted); font-size: 13px; margin: 0; }
+#list { padding: 12px 28px 28px; display: grid; gap: 10px; }
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  padding: 12px 14px; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px;
+}
+.card.earned { border-color: var(--teal); }
+.card.earned .name { color: var(--teal); }
+.card input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--teal); margin-top: 4px; cursor: pointer; }
+.card .head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.name { font-size: 17px; font-weight: 700; margin: 0; }
+.badge {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  border-radius: 999px; padding: 2px 8px; white-space: nowrap;
+}
+.badge.platinum { background: var(--platinum); color: #0b3a44; }
+.badge.gold { background: var(--gold); color: #4d3200; }
+.badge.silver { background: var(--silver); color: #26303f; }
+.badge.bronze { background: var(--bronze); color: #3d2208; }
+.tag { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; }
+.tag.miss { color: #ffb3c8; border-color: #ff5ea8; }
+.tag.hidden-tag { color: var(--gold); border-color: var(--gold); }
+.desc { margin: 2px 0 0; color: var(--muted); font-size: 14px; grid-column: 2; }
+.guide-toggle {
+  grid-column: 2; justify-self: start; background: none; border: none; color: var(--pink);
+  font-size: 13px; font-weight: 700; padding: 4px 0 0; cursor: pointer; text-align: left;
+}
+.guide { grid-column: 2; margin: 6px 0 0; font-size: 14px; }
+.guide p { margin: 0 0 8px; }
+.guide .src-label { font-size: 12px; color: var(--muted); margin: 0 0 2px; text-transform: uppercase; letter-spacing: 0.08em; }
+.guide ul { margin: 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
+.guide ul li { margin-bottom: 2px; }
+.unconfirmed { color: var(--gold); font-weight: 700; }
+.empty { padding: 24px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 10px; }
+footer { padding: 8px 28px 28px; color: var(--muted); font-size: 13px; max-width: 1000px; }
+footer .src { font-style: italic; }
+footer .fine { font-size: 12px; }
+@media (max-width: 700px) {
+  h1 { font-size: 32px; }
+  .hero, .controls, .roadmap, .showing, #list, footer { padding-left: 14px; padding-right: 14px; }
+  .controls input[type="search"] { width: 100%; }
+}
